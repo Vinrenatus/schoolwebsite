@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.slick-dots li button:before {
+  color: #0ea5e9 !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #0284c7 !important;
+}
