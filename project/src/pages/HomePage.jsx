@@ -6,101 +6,142 @@ import { FiArrowRight, FiBook, FiCalendar, FiUsers, FiAward } from 'react-icons/
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
+// Updated programs data with all required programs
+const programsData = [
+  {
+    id: '1',
+    title: 'CBC Primary Education',
+    description: 'Comprehensive primary education program following the Kenyan Competency-Based Curriculum framework, preparing students for future academic success.',
+    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    category: 'primary'
+  },
+  {
+    id: '2',
+    title: 'CBC Junior Secondary Education',
+    description: 'Rigorous junior secondary program aligned with Kenya\'s CBC structure, building foundational skills for senior secondary education.',
+    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    category: 'junior-secondary'
+  },
+  {
+    id: '3',
+    title: '8-4-4 Secondary School',
+    description: 'Traditional 8-4-4 system preparation for national examinations, combining academic excellence with character development.',
+    image: 'https://images.unsplash.com/photo-1514119412350-e174d90d280e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    category: 'secondary'
+  },
+  {
+    id: '4',
+    title: 'Computer College Packages and Design',
+    description: 'ICT training programs focusing on software packages, graphic design, and computer applications relevant to Kenya\'s job market.',
+    image: 'https://images.unsplash.com/photo-1526232373132-0e4ee643fa17?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    category: 'vocational'
+  },
+  {
+    id: '5',
+    title: 'Woodwork and Carpentry',
+    description: 'Practical skills development in woodworking, carpentry, and furniture making following Kenyan technical education standards.',
+    image: 'https://images.unsplash.com/photo-1514119412350-e174d90d280e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    category: 'vocational'
+  },
+  {
+    id: '6',
+    title: 'Dairy Farming',
+    description: 'Agricultural training program focusing on dairy cattle management, milk production, and sustainable farming practices relevant to Kenyan agriculture.',
+    image: 'https://images.unsplash.com/photo-1526232373132-0e4ee643fa17?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    category: 'agriculture'
+  },
+  {
+    id: '7',
+    title: 'Beauty and Cosmetics',
+    description: 'Professional training in beauty therapy, hair styling, makeup artistry, and salon management following Kenya\'s vocational education standards.',
+    image: 'https://images.unsplash.com/photo-1526232373132-0e4ee643fa17?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    category: 'vocational'
+  },
+  {
+    id: '8',
+    title: 'Tailoring',
+    description: 'Skill development in garment construction, fabric technology, and fashion design preparing students for Kenya\'s textile industry.',
+    image: 'https://images.unsplash.com/photo-1526232373132-0e4ee643fa17?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    category: 'vocational'
+  },
+  {
+    id: '9',
+    title: 'Extracurricular Activities',
+    description: 'Comprehensive co-curricular programs including sports, music, drama, and clubs that complement academic learning and personal development.',
+    image: 'https://images.unsplash.com/photo-1526232373132-0e4ee643fa17?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    category: 'extracurricular'
+  }
+]
+
+// News data
+const newsData = [
+  {
+    id: '1',
+    title: 'School Wins National Academic Competition',
+    excerpt: 'Our students brought home the gold in the national academic challenge.',
+    date: '2025-03-15',
+    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+  },
+  {
+    id: '2',
+    title: 'New Science Lab Opening Next Month',
+    excerpt: 'State-of-the-art science facilities will be available to students starting next month.',
+    date: '2025-03-10',
+    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+  },
+  {
+    id: '3',
+    title: 'Annual Sports Day Scheduled for April',
+    excerpt: 'Mark your calendars for our biggest sporting event of the year.',
+    date: '2025-03-05',
+    image: 'https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+  },
+]
+
+// Hero slider settings
+const heroSliderSettings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  pauseOnHover: true
+}
+
+// Hero slides data
+const heroSlides = [
+  {
+    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+    title: 'Welcome to Our School',
+    subtitle: 'Nurturing Minds, Building Futures'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+    title: 'Excellence in Education',
+    subtitle: 'Providing Quality Education Since 1990'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+    title: 'Discover Your Potential',
+    subtitle: 'Comprehensive Programs for All Students'
+  }
+]
+
 function HomePage() {
   const [programs, setPrograms] = useState([])
   const [news, setNews] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Simulate fetching data from API
+    // Simulate API fetch with timeout
     setTimeout(() => {
-      setPrograms([
-        {
-          id: '1',
-          title: 'Primary Education',
-          description: 'Comprehensive primary education program focusing on foundational skills.',
-          image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-          category: 'primary'
-        },
-        {
-          id: '2',
-          title: 'Secondary Education',
-          description: 'Rigorous secondary education preparing students for higher learning.',
-          image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-          category: 'secondary'
-        },
-        {
-          id: '3',
-          title: 'Music Program',
-          description: 'Develop musical talents through our comprehensive music program.',
-          image: 'https://images.unsplash.com/photo-1514119412350-e174d90d280e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-          category: 'extracurricular'
-        },
-        {
-          id: '4',
-          title: 'Sports Excellence',
-          description: 'Competitive sports programs developing athletic abilities and teamwork.',
-          image: 'https://images.unsplash.com/photo-1526232373132-0e4ee643fa17?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-          category: 'extracurricular'
-        },
-      ])
-
-      setNews([
-        {
-          id: '1',
-          title: 'School Wins National Academic Competition',
-          excerpt: 'Our students brought home the gold in the national academic challenge.',
-          date: '2025-03-15',
-          image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
-        },
-        {
-          id: '2',
-          title: 'New Science Lab Opening Next Month',
-          excerpt: 'State-of-the-art science facilities will be available to students starting next month.',
-          date: '2025-03-10',
-          image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
-        },
-        {
-          id: '3',
-          title: 'Annual Sports Day Scheduled for April',
-          excerpt: 'Mark your calendars for our biggest sporting event of the year.',
-          date: '2025-03-05',
-          image: 'https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
-        },
-      ])
-
+      setPrograms(programsData)
+      setNews(newsData)
       setIsLoading(false)
     }, 1000)
   }, [])
-
-  const heroSliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: true
-  }
-
-  const heroSlides = [
-    {
-      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
-      title: 'Welcome to Our School',
-      subtitle: 'Nurturing Minds, Building Futures'
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
-      title: 'Excellence in Education',
-      subtitle: 'Providing Quality Education Since 1990'
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
-      title: 'Discover Your Potential',
-      subtitle: 'Comprehensive Programs for All Students'
-    }
-  ]
 
   return (
     <div>
@@ -223,7 +264,7 @@ function HomePage() {
               <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary-500"></div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {programs.map((program) => (
                 <motion.div 
                   key={program.id}

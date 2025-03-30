@@ -17,7 +17,7 @@ function WordForYouPage() {
           person: 'principal',
           name: 'Mr Peter Shanahan',
           title: 'Principal',
-          image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: 'https://media.istockphoto.com/id/1413766112/photo/successful-mature-businessman-looking-at-camera-with-confidence.jpg?s=612x612&w=0&k=20&c=NJSugBzNuZqb7DJ8ZgLfYKb3qPr2EJMvKZ21Sj5Sfq4=',
           message: `
             <p>Dear Students, Parents, and Community Members,</p>
             
@@ -34,7 +34,8 @@ function WordForYouPage() {
             <p>Thank you for your interest in our school. Together, we can make a positive difference in the lives of our students and our community.</p>
             
             <p>Warm regards,</p>
-            <p>Dr. Sarah Johnson<br>Principal</p>
+            <p>Mr Peter Shanahan<br>Principal</p>
+          
           `
         },
         {
@@ -42,7 +43,7 @@ function WordForYouPage() {
           person: 'deputy-principal',
           name: 'Madam Anne Ogalo',
           title: 'Deputy Principal',
-          image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN84w-iRfDNfXbqf6xfHjQr6_PdkctRoJpQA&s',
           message: `
             <p>Dear School Community,</p>
             
@@ -59,15 +60,16 @@ function WordForYouPage() {
             <p>Please feel free to reach out if you have any questions or suggestions. I look forward to working together to provide the best possible educational experience for our students.</p>
             
             <p>Sincerely,</p>
-            <p>Mr. Robert Chen<br>Deputy Principal</p>
+            <p>Madam Ann Ogalo<br>Deputy Principal</p>
+           
           `
         },
         {
           id: '3',
           person: 'academic-director',
-          name: 'Dr. Maria Rodriguez',
+          name: 'Mercilinus Osiemo',
           title: 'Academic Director',
-          image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: 'https://www.shutterstock.com/image-photo/successful-confident-black-business-man-260nw-563534320.jpg',
           message: `
             <p>Dear Students and Parents,</p>
             
@@ -92,8 +94,8 @@ function WordForYouPage() {
         {
           id: '4',
           person: 'student-affairs',
-          name: 'Ms. Olivia Thompson',
-          title: 'Director of Student Affairs',
+          name: 'Madam Eva Njagi',
+          title: 'Head  teacher Primary School',
           image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
           message: `
             <p>Dear Students and Families,</p>

@@ -18,28 +18,28 @@ function ProgramsPage() {
           id: '1',
           title: 'Primary Education',
           description: 'Our primary education program focuses on building strong foundations in literacy, numeracy, and critical thinking. Students engage in a balanced curriculum that promotes holistic development.',
-          image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: 'https://ercec.sc.ke/img/schoolreopens.JPEG',
           category: 'primary'
         },
         {
           id: '2',
           title: 'Secondary Education',
           description: 'The secondary education program prepares students for higher education through rigorous academic coursework, career guidance, and personal development opportunities.',
-          image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: 'https://erf.org.au/app/uploads/2020/03/ERFA-Donate-Hero-1400x934.jpg',
           category: 'secondary'
         },
         {
           id: '3',
-          title: 'Music Program',
-          description: 'Our comprehensive music program offers instruction in various instruments, vocal training, music theory, and performance opportunities to develop students\' musical talents.',
-          image: 'https://images.unsplash.com/photo-1514119412350-e174d90d280e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          title: 'Computer College',
+          description: 'Our comprehensive computer training offers state of the art learning in key marketabvle skills such as Microsoft Office and Libre Offcie packages, Graphic Design, Office-ware training',
+          image: 'https://media.istockphoto.com/id/164548944/photo/college-students-in-computer-room.jpg?s=612x612&w=0&k=20&c=mAoAUIV-1vWapZVzZcuWOp0ROKN8y7ky8SGcNs6uYOQ=',
           category: 'extracurricular'
         },
         {
           id: '4',
           title: 'Sports Excellence',
           description: 'The sports excellence program develops athletic abilities, teamwork, and sportsmanship through competitive and recreational sports activities.',
-          image: 'https://images.unsplash.com/photo-1526232373132-0e4ee643fa17?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: 'https://ercec.sc.ke/data1/images/sl5.JPG',
           category: 'extracurricular'
         },
         {

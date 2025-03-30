@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom' // Remove BrowserRouter import
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import HomePage from './pages/HomePage'
@@ -24,6 +24,7 @@ import AdminOrders from './pages/admin/AdminOrders'
 import ProtectedRoute from './components/auth/ProtectedRoute'
 import { useTheme } from './contexts/ThemeContext'
 import ScrollToTop from './components/utils/ScrollToTop'
+import ResourcesPage from './pages/ResourcesPage'
 
 function App() {
   const { darkMode } = useTheme()
@@ -64,6 +65,7 @@ function App() {
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+            <Route path="/resources" element={<ResourcesPage />} />
             
             {/* Admin Routes */}
             <Route path="/admin" element={<ProtectedRoute role="admin"><AdminDashboard /></ProtectedRoute>} />

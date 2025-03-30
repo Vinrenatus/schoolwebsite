@@ -13,23 +13,24 @@ function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const location = useLocation()
 
+  // Ensure dark mode is enabled by default
+  useEffect(() => {
+    if (!darkMode) {
+      toggleDarkMode()
+    }
+  }, [darkMode, toggleDarkMode])
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
+      setIsScrolled(window.scrollY > 10)
     }
 
     window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   useEffect(() => {
@@ -37,21 +38,26 @@ function Header() {
   }, [location])
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled || darkMode ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-300 
+      ${isScrolled || darkMode ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
+      
       <div className="container mx-auto px-4 py-3 md:py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <span className="text-xl md:text-2xl font-bold text-primary-600 dark:text-primary-400">Edmund Rice Catholic Education Centre</span>
+            <span className="text-xl md:text-2xl font-bold text-primary-600 dark:text-primary-400">
+              Edmund Rice Catholic Education Centre
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <Link to="/" className="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Home</Link>
-            <Link to="/programs" className="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Programs</Link>
-            <Link to="/news" className="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">News</Link>
-            <Link to="/gallery" className="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Gallery</Link>
-            <Link to="/word-for-you" className="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Word For You</Link>
-            <Link to="/store" className="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Store</Link>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/programs">Programs</NavLink>
+            <NavLink to="/news">News</NavLink>
+            <NavLink to="/gallery">Gallery</NavLink>
+            <NavLink to="/word-for-you">Word For You</NavLink>
+            <NavLink to="/resources">Resources</NavLink>
+            <NavLink to="/store">Store</NavLink>
           </nav>
 
           <div className="flex items-center space-x-4">
@@ -112,25 +118,24 @@ function Header() {
       {isMenuOpen && (
         <div className="md:hidden bg-white dark:bg-gray-800 shadow-lg">
           <nav className="container mx-auto px-4 py-3 flex flex-col space-y-3">
-            <Link to="/" className="py-2 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Home</Link>
-            <Link to="/programs" className="py-2 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Programs</Link>
-            <Link to="/news" className="py-2 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">News</Link>
-            <Link to="/gallery" className="py-2 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Gallery</Link>
-            <Link to="/word-for-you" className="py-2 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Word For You</Link>
-            <Link to="/store" className="py-2 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Store</Link>
+            <MobileNavLink to="/">Home</MobileNavLink>
+            <MobileNavLink to="/programs">Programs</MobileNavLink>
+            <MobileNavLink to="/news">News</MobileNavLink>
+            <MobileNavLink to="/gallery">Gallery</MobileNavLink>
+            <MobileNavLink to="/word-for-you">Word For You</MobileNavLink>
+            <MobileNavLink to="/resources">Resources</MobileNavLink>
+            <MobileNavLink to="/store">Store</MobileNavLink>
             
             {!currentUser && (
-              <Link to="/login" className="py-2 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Login</Link>
+              <MobileNavLink to="/login">Login</MobileNavLink>
             )}
             
             {currentUser && (
               <>
-                {isAdmin && (
-                  <Link to="/admin" className="py-2 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Admin Dashboard</Link>
-                )}
+                {isAdmin && <MobileNavLink to="/admin">Admin Dashboard</MobileNavLink>}
                 <button 
                   onClick={logout}
-                  className="py-2 text-left font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  className="w-full text-left py-2 font-medium hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
                 >
                   Logout
                 </button>
@@ -142,5 +147,31 @@ function Header() {
     </header>
   )
 }
+
+// Desktop Navigation Link Component
+const NavLink = ({ children, ...props }) => (
+  <Link
+    {...props}
+    className="relative font-medium text-gray-700 dark:text-gray-300 
+    hover:text-primary-600 dark:hover:text-primary-400 transition-all 
+    duration-300 before:absolute before:-bottom-1 before:left-0 
+    before:w-0 before:h-[2px] before:bg-primary-600 dark:before:bg-primary-400 
+    hover:before:w-full before:transition-all before:duration-300"
+  >
+    {children}
+  </Link>
+)
+
+// Mobile Navigation Link Component
+const MobileNavLink = ({ children, ...props }) => (
+  <Link
+    {...props}
+    className="py-2 font-medium text-gray-700 dark:text-gray-300 
+    hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors 
+    duration-200 block w-full"
+  >
+    {children}
+  </Link>
+)
 
 export default Header
